@@ -2,9 +2,13 @@
 import soco
 import SocketServer
 from BaseHTTPServer import BaseHTTPRequestHandler
+from ConfigParser import SafeConfigParser
 
-PORT = 8000
-ROOM = 'Bedroom'
+parser = SafeConfigParser()
+parser.read('sonos.ini')
+
+ROOM = parser.get('main', 'room')
+PORT = parser.getint('main', 'port')
 
 def play(sonos):
 	for device in soco.discover():
