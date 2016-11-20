@@ -39,9 +39,8 @@ class MyHandler(BaseHTTPRequestHandler):
 		s.wfile.write("<body><h1>Sonos Controller</h1>")
 		s.wfile.write("<p>")
 		if request:
-			s.wfile.write("%s on room %s" % (request, ROOM))
-		else:
-			s.wfile.write("Call either /play or /pause")
+			s.wfile.write("%s on room %s</br>" % (request, ROOM))
+		s.wfile.write("Call either <a href=\"/play\">/play</a> or <a href=\"/pause\">/pause</a>")
 		s.wfile.write("</p>")
 		s.wfile.write("<p><a href=\"https://github.com/rougesheep/sonos-controller\">https://github.com/rougesheep/sonos-controller</a></p>")
 		s.wfile.write("</body></html>")
