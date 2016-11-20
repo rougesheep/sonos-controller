@@ -39,6 +39,7 @@ class MyHandler(BaseHTTPRequestHandler):
 		else:
 			s.wfile.write("Call either /play or /pause")
 		s.wfile.write("</p>")
+		s.wfile.write("<p><a href=\"https://github.com/rougesheep/sonos-controller\">https://github.com/rougesheep/sonos-controller</a></p>")
 		s.wfile.write("</body></html>")
 
 print "Start Server on Port %s" % PORT
